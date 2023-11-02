@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 8080;
+const port = 5000;
 const path = require("path");
+const mongoose = require("mongoose");
 
 // public static path
 const staticPath = path.join(__dirname, "../public");
@@ -21,8 +22,8 @@ app.get("/weather", (req, res) => {
   res.render("weather");
 });
 app.get("*", (req, res) => {
-  res.render("404",{
-    errorMsg:"Oops! Page not Found"
+  res.render("404", {
+    errorMsg: "Oops! Page not Found",
   });
 });
 
